@@ -1,0 +1,55 @@
+Indian Railways has one of the biggest rail network in the world .
+India’s Ministry of Railways handles more than 12000 passenger trains to carry over 23 million passengers daily.
+These trains are divided into two categories:
+Short distance trains and Long distance trains .
+Trains for short distances are EMU trains, DMU trains , Shuttles , Passenger trains and Fast passenger trains whereas trains for long distances are mail/exp. trains, superfast trains, permium trains like Rajdhani exp. ,duronto exp., Shatabdi exp. , double dacker exp., Vande Bharat exp., Humsafar exp., and few more.
+here are few special services as well as Yuva exp, Antyodhya exp., Garibrath exp., and few more .
+
+Here we will know about
+1.Mail/express trains
+2.Superfast trains
+3.Premium trains
+4.Special services
+
+1.Mail/exp. trains :
+As per passengers point of view there is no such difference between mail trains and express trains but for the Railways one or two additional mail coaches are attached to transport the mail .
+Mail trains connects two big cities are and they are long distance travwlling trains .
+Express trains are of two types : First is intercity exp. Such trains connect two cities and finish their up/down service on same day. Second is same as mail trains, exp. trains are also long distance travelling trains.
+There average speed varies between 32–55 km/h. There might be few exceptional exp. Trains with average speed more than 55 kmph.
+These trains have rake composition of general cosches , sleeper coaches and AC coaches .
+Note: Intercity trains generally runs with general coaches and AC chair car coachrs . They do not run with sleeper coachrs as they are not overnight trains.
+
+
+2.Superfast trains :
+Such trains are slightly faster than mail/exp. trains with less no. Of stops and there average speed varies between 40 kmph to 65 kmph. There might be few exception superfast trains with average speed more than 65 kmph.
+Superast trains are given priority over goods trains , all short distance trains and mail exp. trains .
+They also have a similar rake composition i.e., general coaches , sleeper coaches and AC coaches .
+
+
+3.Premium trains :
+
+Rajdhani exp:
+Rajdhani means capital and as per the name these trains connect other state capitals or major cities of India to the Capital city of India which is New Delhi .
+This is a premium train and gets the highest priority in Indian Railways.
+There average speed varies between 70 kmph to 98 kmph.
+These trains run with AC coaches only.
+
+Shatabdi exp./ Vande Bharat exp./ Gatiman exp. :
+They are the fastest running trains of Indian Railways.
+They connect two cities and returns to their source station on the same day .
+They have rake composition of AC chair car and Executive class coaches .
+Thrre average speed is generally over 80 kmph.
+There might be two or three shatabdi trains with the average speed below 80 kmph.
+Gatiman exp. is India’s fastest running train with operational speed of 160 kmph.
+Fhese trains also gets the highest priority on their respective routes.
+Note: India has more than half dozen of such trains which are capable of running upto 200 kmph.
+
+4. Special Services : Indian Railways runs few special services as well .
+
+Duronto exp.
+These trains are well known for their speed and comfort, and they come under type : Duronto
+Such trains do not have two many commercial halts and are considered as one of the fastest trains of Indian Railways .
+
+Yuva exp.
+This train is also a better option over exp. And superfast trains on their respective routes.
+There are few other services as well as Suvidha special , Holiday special etc. such trains do not have so many halts but runs with nominal priority over short distance trains only .
