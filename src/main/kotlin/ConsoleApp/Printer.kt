@@ -1,4 +1,4 @@
-package ConsoleApplication
+package ConsoleApp
 
 import ConsoleApplication.Trains.Train
 

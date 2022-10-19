@@ -1,7 +1,8 @@
-package ConsoleApplication
+package ConsoleApp
 
-import ConsoleApplication.Store.DB
+import ConsoleApp.Store.DB
 import ConsoleApplication.Trains.Train
+import ConsoleApplication.User
 
 class Booking {
     fun trainsFromSrcToDest(src: String, dest: String): MutableList<Train> {

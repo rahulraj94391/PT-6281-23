@@ -1,4 +1,4 @@
-package ConsoleApplication.Interfaces
+package ConsoleApp.Interfaces
 
 interface Superfast {
     // Superfast Services

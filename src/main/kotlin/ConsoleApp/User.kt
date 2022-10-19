@@ -1,5 +1,7 @@
 package ConsoleApplication
 
+import ConsoleApp.Ticket
+
 class User(_userId: String, _fullName: String, _age: Int, _gender: Char) {
     var userId: String
     var fullName: String
