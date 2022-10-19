@@ -26,7 +26,7 @@ fun main() {
 
 
 fun searchTrain(printer: Printer, booking: Booking) {
-    var (src, dest) = srcAndDestIP()
+    val (src, dest) = srcAndDestIP()
     val trainsFromSrcToDest: MutableList<Train> = booking.trainsFromSrcToDest(src, dest)
     printer.printTrainNames(trainsFromSrcToDest)
     println()
@@ -41,7 +41,7 @@ fun srcAndDestIP(): Pair<String, String> {
 }
 
 fun bookTicket(printer: Printer, booking: Booking) {
-    var (src, dest) = srcAndDestIP()
+    val (src, dest) = srcAndDestIP()
     val trainsFromSrcToDest: MutableList<Train> = booking.trainsFromSrcToDest(src, dest)
     printer.printTrainNames(trainsFromSrcToDest)
     if (trainsFromSrcToDest.size == 0) return
@@ -75,7 +75,7 @@ fun listOfTravellers(noOfTravellers: Int): MutableList<Person> {
         val age = readln().toInt()
         println("Enter ID number of traveller $x")
         val id = readln()
-        var person = Person(name, age, id)
+        val person = Person(name, age, id)
         listOfTravellers.add(person)
     }
     return listOfTravellers

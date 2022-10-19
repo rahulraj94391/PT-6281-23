@@ -3,7 +3,7 @@ package ConsoleApplication
 import ConsoleApplication.Trains.Train
 
 class Printer {
-    fun mainScreen(): Unit {
+    fun mainScreen() {
         println("## Main Screen ##")
         println("1. Search Trains")
         println("2. Book Train ")
@@ -13,7 +13,7 @@ class Printer {
         print("Enter choice: ")
     }
 
-    fun printTrainNames(list: MutableList<Train>): Unit {
+    fun printTrainNames(list: MutableList<Train>) {
         if (list.size == 0) {
             println("No Trains Found")
             return
@@ -24,7 +24,7 @@ class Printer {
         }
     }
 
-    fun printTicketDetails(ticket: Ticket): Unit {
+    fun printTicketDetails(ticket: Ticket) {
         println("<----- Ticket Details ----->")
         println("Train -> ${ticket.trainRef.trainNumber} - ${ticket.trainRef.trainName.lowercase()}")
         println("PNR number -> ${ticket.pnr}")
