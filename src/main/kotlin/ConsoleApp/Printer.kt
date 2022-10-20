@@ -1,6 +1,6 @@
 package ConsoleApp
 
-import ConsoleApplication.Trains.Train
+import ConsoleApp.Trains.Train
 
 class Printer {
     fun mainScreen() {

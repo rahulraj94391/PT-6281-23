@@ -1,7 +1,7 @@
 package ConsoleApp
 
 import ConsoleApp.Store.DB
-import ConsoleApplication.Trains.Train
+import ConsoleApp.Trains.Train
 import ConsoleApplication.User
 import kotlin.system.exitProcess
 
@@ -56,7 +56,7 @@ fun bookTicket(printer: Printer, booking: Booking) {
     print("Enter no of travellers: ")
     val noOfTravellers = readln().toInt()
     if (noOfTravellers < 1) return
-    if (!booking.isSeatsAvailable(selectedTrain, noOfTravellers)) {
+    if (!selectedTrain.isSeatsAvailable(noOfTravellers)) {
         println("Seats not available in ${selectedTrain.trainName} for $noOfTravellers travellers.")
         return
     }

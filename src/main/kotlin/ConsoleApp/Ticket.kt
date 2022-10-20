@@ -1,6 +1,6 @@
 package ConsoleApp
 
-import ConsoleApplication.Trains.Train
+import ConsoleApp.Trains.Train
 
 class Ticket(_userId: String, _boardingStation: String, _destinationStation: String, _trainRef: Train) {
     var trainRef: Train private set

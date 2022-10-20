@@ -1,7 +1,7 @@
 package ConsoleApp
 
 import ConsoleApp.Store.DB
-import ConsoleApplication.Trains.Train
+import ConsoleApp.Trains.Train
 import ConsoleApplication.User
 
 class Booking {
@@ -33,20 +33,7 @@ class Booking {
         val ticket = Ticket(user.userId, src, dest, train)
         ticket.addTravellerOnTicket(list)
         user.addTicket(ticket)
-        adjustSeat(train, list.size)
-    }
-
-    private fun adjustSeat(train: Train, count: Int) {
-        train.numberOfSeats = train.numberOfSeats - count
-        // more implementation based on the booking interval can be done here
-    }
-
-    fun isSeatsAvailable(train: Train, count: Int): Boolean {
-        if (train.numberOfSeats < count)
-            return false
-        return true
-
-        // interval checking can be done here for booking
+        train.decrementSeat(list.size)
     }
 }
 

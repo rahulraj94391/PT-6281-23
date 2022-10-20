@@ -1,6 +1,6 @@
 package ConsoleApp.Store
 
-import ConsoleApplication.Trains.*
+import ConsoleApp.Trains.*
 import ConsoleApplication.User
 
 
@@ -15,9 +15,9 @@ object DB {
 
     private fun addTrains() {
         listOfTrains.add(SFMail("CSMT MS SF MAIL", 22157, Routes.route22157, 2)) // this is a SF train, which has MAIL facility
-        listOfTrains.add(Express("CSMT CHENNAI EX", 22159, Routes.route22159, 2)) // Express
-        listOfTrains.add(Mail("CHENNAI MAIL", 12658, Routes.route12658, 2)) // Mail
-        listOfTrains.add(Rajdhani("MAS NZM RAJDHANI", 12433, Routes.route12433, 2)) // Rajdhani
+        listOfTrains.add(Express("CSMT CHENNAI EX", 22159, Routes.route22159, 2)) // I_Express
+        listOfTrains.add(Mail("CHENNAI MAIL", 12658, Routes.route12658, 2)) // I_Mail
+        listOfTrains.add(Rajdhani("MAS NZM RAJDHANI", 12433, Routes.route12433, 2)) // I_Rajdhani
     }
 
     private fun addUsers(){
