@@ -1,13 +1,19 @@
 package ConsoleApp.Compartments
 
-class MailCompartment:Coach() {
-    val payload: Int = 200
+class MailCompartment : Coach() {
+    var payloadInKG: Int = 2000
 
-    fun loadShipment(){
+    fun loadShipment() {
+        payloadInKG--
         println("loading shipment")
     }
 
-    fun unloadShipment(){
+    fun currentPayloadCapacity(): Int {
+        return payloadInKG
+    }
+
+    fun unloadShipment() {
+        payloadInKG++
         println("unloading shipment")
     }
 }

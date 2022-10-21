@@ -1,6 +1,6 @@
 package ConsoleApp
 
-import ConsoleApp.Store.DB
+import ConsoleApp.Storage.DB
 import ConsoleApp.Trains.Train
 import ConsoleApplication.User
 
@@ -34,6 +34,27 @@ class Booking {
         ticket.addTravellerOnTicket(list)
         user.addTicket(ticket)
         train.decrementSeat(list.size)
+    }
+
+    fun printTrainNames(list: MutableList<Train>) {
+        if (list.size == 0) {
+            println("No Trains Found")
+            return
+        }
+        println("Available Train(s) --->")
+        for (i in list.indices) {
+            println("${i + 1}. ${list[i].trainNumber} - ${list[i].trainName}")
+        }
+    }
+
+    fun mainScreen() {
+        println("## Main Screen ##")
+        println("1. Search Trains")
+        println("2. Book Train ")
+        println("3. View Booked Tickets")
+        println("4. Exit")
+        println()
+        print("Enter choice: ")
     }
 }
 

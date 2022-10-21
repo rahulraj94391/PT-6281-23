@@ -1,4 +1,4 @@
-package ConsoleApp.Store
+package ConsoleApp.Storage
 
 import ConsoleApp.Trains.*
 import ConsoleApplication.User

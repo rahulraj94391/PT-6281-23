@@ -1,6 +1,6 @@
 package ConsoleApp.Trains
 
-import ConsoleApp.Compartments.Coach
+import ConsoleApp.Compartments.*
 import ConsoleApp.Priority
 
 abstract class Train(
@@ -32,15 +32,31 @@ abstract class Train(
 
 
     fun trainInfo(): String {
-        return ""
+        return "train Info Not defined yet"
     }
 
     abstract fun averageSpeed(): Int
 
     abstract fun maxSpeed(): Int
 
-    fun getAvailableCompartments() {
-
+    fun coachesInTrain(): MutableSet<String> {
+        val listOfCoaches = mutableSetOf<String>()
+        for (coach in coaches) {
+            val i = when (coach) {
+                is _2S -> "_2S"
+                is AC1 -> "AC1"
+                is AC2 -> "AC2"
+                is AC3 -> "AC3"
+                is GN -> "GN"
+                is MailCompartment -> "MAIL"
+                is PantryCar -> "PANTRY"
+                is SL -> "SL"
+                is CC -> "CC"
+                else -> {"NotDefined"}
+            }
+            listOfCoaches.add(i)
+        }
+        return listOfCoaches
     }
 
     abstract fun getEngineType(): String

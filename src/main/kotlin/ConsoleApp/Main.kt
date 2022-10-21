@@ -1,35 +1,40 @@
 package ConsoleApp
 
-import ConsoleApp.Store.DB
+import ConsoleApp.Storage.DB
+import ConsoleApp.Storage.Routes
+import ConsoleApp.Trains.Rajdhani
 import ConsoleApp.Trains.Train
 import ConsoleApplication.User
 import kotlin.system.exitProcess
 
-fun main() {
-    val printer = Printer()
+fun amain() {
     val booking = Booking()
 
     while (true) {
-        printer.mainScreen()
+        booking.mainScreen()
         var choice = readln().toInt()
         while (choice !in 1..4) {
             print("Enter correct choice: ")
             choice = readln().toInt()
         }
         when (choice) {
-            1 -> searchTrain(printer, booking)
-            2 -> bookTicket(printer, booking)
-            3 -> viewBookedTickets(printer)
+            1 -> searchTrain(booking)
+            2 -> bookTicket(booking)
+            3 -> viewBookedTickets()
             4 -> exitProcess(0)
         }
     }
 }
 
+fun main() {
+    var rajdhani: Rajdhani = Rajdhani("NMZ Rajdhani", 123456, Routes.route12433, 20)
+    rajdhani.coachesInTrain().forEach(::println)
+}
 
-fun searchTrain(printer: Printer, booking: Booking) {
+fun searchTrain(booking: Booking) {
     val (src, dest) = srcAndDestIP()
     val trainsFromSrcToDest: MutableList<Train> = booking.trainsFromSrcToDest(src, dest)
-    printer.printTrainNames(trainsFromSrcToDest)
+    booking.printTrainNames(trainsFromSrcToDest)
     println()
 }
 
@@ -41,10 +46,10 @@ fun srcAndDestIP(): Pair<String, String> {
     return Pair(sourceStn, destinationStn)
 }
 
-fun bookTicket(printer: Printer, booking: Booking) {
+fun bookTicket(booking: Booking) {
     val (src, dest) = srcAndDestIP()
     val trainsFromSrcToDest: MutableList<Train> = booking.trainsFromSrcToDest(src, dest)
-    printer.printTrainNames(trainsFromSrcToDest)
+    booking.printTrainNames(trainsFromSrcToDest)
     if (trainsFromSrcToDest.size == 0) return
     print("Choose train: ")
     var sNo: Int = readln().toInt() - 1
@@ -93,11 +98,11 @@ fun giveUserRef(): User {
     return user
 }
 
-fun viewBookedTickets(printer: Printer) {
+fun viewBookedTickets() {
     val user = giveUserRef()
     val size = user.tickets.size
     if (size == 0) {
-        println("No active tickets found !!!")
+        println("No ticket(s) found !!!")
         return
     }
     println("Select the ticket:")
@@ -110,13 +115,6 @@ fun viewBookedTickets(printer: Printer) {
         choice = readln().toInt()
     }
     val ticket = user.tickets[choice - 1]
-    printer.printTicketDetails(ticket)
+    user.printTicketDetails(ticket)
     println()
 }
-
-
-
-
-
-
-

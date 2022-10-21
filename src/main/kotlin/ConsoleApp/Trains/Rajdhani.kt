@@ -15,7 +15,7 @@ class Rajdhani(
     }
 
     private fun alignCoaches(): List<Coach> {
-        //Todo: fill in the coach position
+        return listOf(AC1(), AC2(), AC3(), PantryCar())
     }
 
     override fun averageSpeed(): Int {

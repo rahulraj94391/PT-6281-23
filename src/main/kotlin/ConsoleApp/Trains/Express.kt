@@ -13,6 +13,7 @@ class Express(trainName: String, trainNumber: Int, trainRoute: Array<Array<Strin
 
     private fun alignCoaches(): List<Coach> {
         /*Train number: 22891- 2s,3a,cc*/
+        /*Completes journey same day*/
         return listOf(_2S(), AC3(), CC())
     }
 
