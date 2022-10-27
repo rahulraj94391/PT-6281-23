@@ -7,7 +7,8 @@ fun main() {
 
     while (true) {
         Printer.mainScreen()
-        var choice = validator.getIntegerInput(1..4)
+        val range: IntRange = 1..4
+        val choice = validator.getIntegerInput(range)
         when (choice) {
             1 -> Booking.searchTrain()
             2 -> Booking.bookTicket()

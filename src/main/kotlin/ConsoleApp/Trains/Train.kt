@@ -9,8 +9,8 @@ abstract class Train(
     var trainRoute: Array<Array<String>>,
     var numberOfSeats: Int,
 ) {
-    abstract val maxSpeed: Int
-    abstract val avgSpeed: Int
+    protected abstract val maxSpeed: Int
+    protected abstract val avgSpeed: Int
 
     protected lateinit var coaches: List<Coach>
 
@@ -54,7 +54,9 @@ abstract class Train(
                 is PantryCar -> "PANTRY"
                 is SL -> "SL"
                 is CC -> "CC"
-                else -> {"NotDefined"}
+                else -> {
+                    "NotDefined"
+                }
             }
             listOfCoaches.add(i)
         }
