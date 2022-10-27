@@ -1,11 +1,10 @@
 package ConsoleApp.Trains
 
 import ConsoleApp.Compartments.*
-import ConsoleApp.Interfaces.I_Express
 import ConsoleApp.Priority
 
 class Express(trainName: String, trainNumber: Int, trainRoute: Array<Array<String>>, numberOfSeats: Int) :
-    Train(trainName, trainNumber, trainRoute, numberOfSeats), I_Express {
+    Train(trainName, trainNumber, trainRoute, numberOfSeats) {
 
     init {
         super.coaches = alignCoaches()
@@ -16,6 +15,9 @@ class Express(trainName: String, trainNumber: Int, trainRoute: Array<Array<Strin
         /*Completes journey same day*/
         return listOf(_2S(), AC3(), CC())
     }
+
+    override val maxSpeed: Int = 105
+    override val avgSpeed: Int = 45
 
     override fun averageSpeed(): Int {
         return avgSpeed

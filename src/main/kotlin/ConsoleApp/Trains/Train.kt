@@ -9,8 +9,10 @@ abstract class Train(
     var trainRoute: Array<Array<String>>,
     var numberOfSeats: Int,
 ) {
-    protected lateinit var coaches: List<Coach>
+    abstract val maxSpeed: Int
+    abstract val avgSpeed: Int
 
+    protected lateinit var coaches: List<Coach>
 
     fun decrementSeat(count: Int) { /*decrement on reservation*/
         this.numberOfSeats = this.numberOfSeats - count
@@ -39,7 +41,7 @@ abstract class Train(
 
     abstract fun maxSpeed(): Int
 
-    fun coachesInTrain(): MutableSet<String> {
+    fun listOfCoaches(): MutableSet<String> {
         val listOfCoaches = mutableSetOf<String>()
         for (coach in coaches) {
             val i = when (coach) {

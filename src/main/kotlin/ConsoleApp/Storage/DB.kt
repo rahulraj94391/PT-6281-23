@@ -1,7 +1,7 @@
 package ConsoleApp.Storage
 
 import ConsoleApp.Trains.*
-import ConsoleApplication.User
+import ConsoleApp.User
 
 
 object DB {

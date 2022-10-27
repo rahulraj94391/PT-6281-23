@@ -1,6 +1,4 @@
-package ConsoleApplication
-
-import ConsoleApp.Ticket
+package ConsoleApp
 
 class User(_userId: String, _fullName: String, _age: Int, _gender: Char) {
     var userId: String

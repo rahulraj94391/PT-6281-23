@@ -1,7 +1,6 @@
 package ConsoleApp.Trains
 
 import ConsoleApp.Compartments.*
-import ConsoleApp.Interfaces.*
 import ConsoleApp.Priority
 
 class SFMail(
@@ -9,17 +8,14 @@ class SFMail(
     trainNumber: Int,
     trainRoute: Array<Array<String>>,
     numberOfSeats: Int
-) : Train(trainName, trainNumber, trainRoute, numberOfSeats), I_Superfast, I_Mail {
+) : Train(trainName, trainNumber, trainRoute, numberOfSeats) {
 
     init {
         super.coaches = alignCoaches()
     }
 
-    override val maxSpeed: Int
-        get() = super<I_Superfast>.maxSpeed
-
-    override val avgSpeed: Int
-        get() = super<I_Superfast>.avgSpeed
+    override val maxSpeed: Int = 110
+    override val avgSpeed: Int = 55
 
     override fun averageSpeed(): Int {
         return avgSpeed

@@ -1,7 +1,14 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+private fun String.isCorrectNameFormat(): Boolean {
+    if (this.length > 20) return false
+    for (cc in this) {
+        if (!(cc.isLetter() || cc == ' ')) {
+            return false
+        }
+    }
+    return true
+}
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+
+fun main() {
+    println("Rahul AR".isCorrectNameFormat())
 }

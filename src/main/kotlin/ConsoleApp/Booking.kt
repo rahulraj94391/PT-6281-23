@@ -2,10 +2,52 @@ package ConsoleApp
 
 import ConsoleApp.Storage.DB
 import ConsoleApp.Trains.Train
-import ConsoleApplication.User
 
-class Booking {
-    fun trainsFromSrcToDest(src: String, dest: String): MutableList<Train> {
+
+object Booking {
+    private val validator = Validator()
+
+    fun searchTrain() {
+        val (src, dest) = srcAndDestIP()
+        val trainsFromSrcToDest: MutableList<Train> = trainsFromSrcToDest(src, dest)
+        Printer.printTrainNames(trainsFromSrcToDest)
+        println()
+    }
+
+    fun bookTicket() {
+        val (src, dest) = srcAndDestIP()
+        val trainsFromSrcToDest: MutableList<Train> = trainsFromSrcToDest(src, dest)
+        Printer.printTrainNames(trainsFromSrcToDest)
+        if (trainsFromSrcToDest.size == 0) return
+        var sNo: Int = validator.getIntegerInput(1..trainsFromSrcToDest.size).dec()
+        val selectedTrain: Train = trainsFromSrcToDest[sNo]
+        val noOfTravellers = validator.getValidNoOfTravellersInput()
+        if (!selectedTrain.isSeatsAvailable(noOfTravellers)) {
+            println("Seats are not available in ${selectedTrain.trainName} for $noOfTravellers travellers.")
+            return
+        }
+        val user = giveUserRef()
+        val listOfTravellers: MutableList<Person> = listOfTravellers(noOfTravellers)
+        bookTicketInTrain(user, src, dest, selectedTrain, listOfTravellers)
+        println("Ticket has been booked for ${listOfTravellers.size} traveller(s) in ${selectedTrain.trainName}.")
+        println()
+    }
+
+    fun viewBookedTickets() {
+        val user = giveUserRef()
+        val size = user.tickets.size
+        if (size == 0) {
+            println("### No ticket(s) found ###")
+            return
+        }
+        Printer.availableTickets(size, user)
+        var choice: Int = validator.getIntegerInput(1..size)
+        val ticket: Ticket = user.tickets[choice - 1]
+        user.printTicketDetails(ticket)
+        println()
+    }
+
+    private fun trainsFromSrcToDest(src: String, dest: String): MutableList<Train> {
         val trains: MutableList<Train> = mutableListOf()
         for (train in DB.listOfTrains) {
             var srcIdx: Int = -1
@@ -29,51 +71,42 @@ class Booking {
         return trains
     }
 
-    fun bookTicketInTrain(user: User, src: String, dest: String, train: Train, list: MutableList<Person>) {
+    private fun bookTicketInTrain(user: User, src: String, dest: String, train: Train, list: MutableList<Person>) {
         val ticket = Ticket(user.userId, src, dest, train)
         ticket.addTravellerOnTicket(list)
         user.addTicket(ticket)
         train.decrementSeat(list.size)
     }
 
-    fun printTrainNames(list: MutableList<Train>) {
-        if (list.size == 0) {
-            println("No Trains Found")
-            return
-        }
-        println("Available Train(s) --->")
-        for (i in list.indices) {
-            println("${i + 1}. ${list[i].trainNumber} - ${list[i].trainName}")
-        }
+
+    private fun srcAndDestIP(): Pair<String, String> {
+        print("Enter Origin City: ")
+        val sourceStn: String = readln().uppercase().trim()
+        print("Enter Destination City: ")
+        val destinationStn: String = readln().uppercase().trim()
+        return Pair(sourceStn, destinationStn)
     }
 
-    fun mainScreen() {
-        println("## Main Screen ##")
-        println("1. Search Trains")
-        println("2. Book Train ")
-        println("3. View Booked Tickets")
-        println("4. Exit")
-        println()
-        print("Enter choice: ")
+
+    private fun listOfTravellers(noOfTravellers: Int): MutableList<Person> {
+        val listOfTravellers: MutableList<Person> = mutableListOf()
+        for (x in 1..noOfTravellers) {
+            println("Enter name of traveller $x")
+            val fullName = validator.getValidNameInput()
+            val age = validator.getValidAgeInput()
+            val person = Person(fullName, age, ID = "Aadhar Card xyz")
+            listOfTravellers.add(person)
+        }
+        return listOfTravellers
+    }
+
+    private fun giveUserRef(): User {
+        print("Enter user ID: ")
+        var user = DB.mapOfUsers[readln()]
+        while (user == null) {
+            println("wrong username, try again ...")
+            user = DB.mapOfUsers[readln()]
+        }
+        return user
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,7 +1,6 @@
 package ConsoleApp.Trains
 
 import ConsoleApp.Compartments.*
-import ConsoleApp.Interfaces.I_Rajdhani
 import ConsoleApp.Priority
 
 class Rajdhani(
@@ -9,7 +8,10 @@ class Rajdhani(
     trainNumber: Int,
     trainRoute: Array<Array<String>>,
     numberOfSeats: Int
-) : Train(trainName, trainNumber, trainRoute, numberOfSeats), I_Rajdhani {
+) : Train(trainName, trainNumber, trainRoute, numberOfSeats) {
+    override val maxSpeed: Int = 130
+    override val avgSpeed: Int = 90
+
     init {
         super.coaches = alignCoaches()
     }
