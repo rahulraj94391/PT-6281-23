@@ -5,6 +5,4 @@ class _2S() : NonACCoach() {
     override var currentCapacity: Int = totalCapacity
     override var fan: Boolean = false
     override var windows: Boolean = true
-
-
 }

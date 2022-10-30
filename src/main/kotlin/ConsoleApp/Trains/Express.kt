@@ -6,6 +6,9 @@ import ConsoleApp.Priority
 class Express(trainName: String, trainNumber: Int, trainRoute: Array<Array<String>>, numberOfSeats: Int) :
     Train(trainName, trainNumber, trainRoute, numberOfSeats) {
 
+    override val maxSpeed: Int = 105
+    override val avgSpeed: Int = 45
+
     init {
         super.coaches = alignCoaches()
     }
@@ -15,9 +18,6 @@ class Express(trainName: String, trainNumber: Int, trainRoute: Array<Array<Strin
         /*Completes journey same day*/
         return listOf(_2S(), AC3(), CC())
     }
-
-    override val maxSpeed: Int = 105
-    override val avgSpeed: Int = 45
 
     override fun averageSpeed(): Int {
         return avgSpeed

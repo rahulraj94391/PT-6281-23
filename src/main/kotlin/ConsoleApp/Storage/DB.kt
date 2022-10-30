@@ -13,10 +13,10 @@ object DB {
     }
 
     private fun addTrains() {
-        listOfTrains.add(SFMail("CSMT MS SF MAIL", 22157, Routes.route22157, 2))
-        listOfTrains.add(Express("CSMT CHENNAI EX", 22159, Routes.route22159, 2))
-        listOfTrains.add(Mail("CHENNAI MAIL", 12658, Routes.route12658, 2))
-        listOfTrains.add(Rajdhani("MAS NZM RAJDHANI", 12433, Routes.route12433, 2))
+        listOfTrains.add(SFMail("CSMT MS SF MAIL", 22157, Routes.route22157, 20))
+        listOfTrains.add(Express("CSMT CHENNAI EX", 22159, Routes.route22159, 20))
+        listOfTrains.add(Mail("CHENNAI MAIL", 12658, Routes.route12658, 20))
+        listOfTrains.add(Rajdhani("MAS NZM RAJDHANI", 12433, Routes.route12433, 20))
     }
 
     private fun addUsers() {

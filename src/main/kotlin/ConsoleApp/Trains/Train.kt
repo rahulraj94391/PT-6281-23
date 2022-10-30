@@ -4,15 +4,34 @@ import ConsoleApp.Compartments.*
 import ConsoleApp.Priority
 
 abstract class Train(
-    var trainName: String,
-    var trainNumber: Int,
-    var trainRoute: Array<Array<String>>,
-    var numberOfSeats: Int,
+    trainName: String,
+    trainNumber: Int,
+    trainRoute: Array<Array<String>>,
+    numberOfSeats: Int
 ) {
+    var trainName: String
+        get() = field
+        protected set
+    var trainNumber: Int
+        get() = field
+        protected set
+    var trainRoute: Array<Array<String>>
+        get() = field
+        protected set
+    var numberOfSeats: Int
+        get() = field
+        protected set
     protected abstract val maxSpeed: Int
     protected abstract val avgSpeed: Int
-
     protected lateinit var coaches: List<Coach>
+
+    init {
+        this.trainNumber = trainNumber
+        this.trainName = trainName
+        this.trainRoute = trainRoute
+        this.numberOfSeats = numberOfSeats
+    }
+
 
     fun decrementSeat(count: Int) { /*decrement on reservation*/
         this.numberOfSeats = this.numberOfSeats - count
@@ -32,6 +51,9 @@ abstract class Train(
         // interval checking can be done here for booking
     }
 
+    fun totalStops(): Int {
+        return this.trainRoute.size
+    }
 
     fun trainInfo(): String {
         return "train Info Not defined yet"

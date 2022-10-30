@@ -8,8 +8,7 @@ fun main() {
     while (true) {
         Printer.mainScreen()
         val range: IntRange = 1..4
-        val choice = validator.getIntegerInput(range)
-        when (choice) {
+        when (validator.getIntegerInput(range)) {
             1 -> Booking.searchTrain()
             2 -> Booking.bookTicket()
             3 -> Booking.viewBookedTickets()

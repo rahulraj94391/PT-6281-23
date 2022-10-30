@@ -12,6 +12,9 @@ class Rajdhani(
     override val maxSpeed: Int = 130
     override val avgSpeed: Int = 90
 
+    val xyz:Int = 0
+        get
+
     init {
         super.coaches = alignCoaches()
     }

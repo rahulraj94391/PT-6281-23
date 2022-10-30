@@ -3,7 +3,6 @@ package ConsoleApp
 import ConsoleApp.Storage.DB
 import ConsoleApp.Trains.Train
 
-
 object Booking {
     private val validator = Validator()
 
@@ -53,17 +52,17 @@ object Booking {
             var srcIdx: Int = -1
             var destIdx: Int = -1
 
-            srcFound@ for (x in 0 until train.trainRoute.size - 1) {
-                if (train.trainRoute[x][1] == src) {
+            for (x in 0 until train.totalStops() - 1) {
+                if (train.trainRoute[x][1].equals(src,true)) {
                     srcIdx = x
                     destIdx = x + 1
-                    break@srcFound
+                    break
                 }
             }
-            destFound@ while (srcIdx != -1 && destIdx != train.trainRoute.size) {
-                if (train.trainRoute[destIdx][1] == dest && srcIdx != -1) {
+            while (srcIdx != -1 && destIdx != train.totalStops()) {
+                if (train.trainRoute[destIdx][1].equals(dest,true) && srcIdx != -1) {
                     trains.add(train)
-                    break@destFound
+                    break
                 }
                 destIdx++
             }
@@ -81,9 +80,9 @@ object Booking {
 
     private fun srcAndDestIP(): Pair<String, String> {
         print("Enter Origin City: ")
-        val sourceStn: String = readln().uppercase().trim()
+        val sourceStn: String = readln().trim()
         print("Enter Destination City: ")
-        val destinationStn: String = readln().uppercase().trim()
+        val destinationStn: String = readln().trim()
         return Pair(sourceStn, destinationStn)
     }
 
@@ -91,7 +90,7 @@ object Booking {
     private fun listOfTravellers(noOfTravellers: Int): MutableList<Person> {
         val listOfTravellers: MutableList<Person> = mutableListOf()
         for (x in 1..noOfTravellers) {
-            println("Enter name of traveller $x")
+            println("Enter details of traveller $x")
             val fullName = validator.getValidNameInput()
             val age = validator.getValidAgeInput()
             val person = Person(fullName, age, ID = "Aadhar Card xyz")
