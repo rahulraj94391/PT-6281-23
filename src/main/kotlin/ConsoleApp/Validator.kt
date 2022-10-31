@@ -57,7 +57,7 @@ class Validator {
     }
 
     fun getValidNoOfTravellersInput(): Int {
-        // on a ticket maximum 6 person can travel
+        // on a single ticket maximum 6 person can travel
         var travellers by Delegates.notNull<Int>()
         var flag = true
         while (flag) {

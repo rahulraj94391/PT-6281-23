@@ -6,7 +6,6 @@ abstract class TwoWheelerWithEngine() : IMoveable, IEngine {
     abstract var color: String protected set
     abstract var price: Double protected set
 
-
     open fun Wheel(): String {
         return "2 wheeler"
     }

@@ -6,3 +6,4 @@ class Hyundai() : Cars(), LocationService {
     override fun CallFacility(): String = "Call Facility supported is available"
     override fun GPS() = println("Navigation feature is available on Hyundai")
 }
+
