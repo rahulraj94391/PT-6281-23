@@ -29,6 +29,16 @@ class VehicleRentalStore(ownerName: String, phoneNumber: String) {
         motorbikes.add(HeroSplendor("BLACK"))
     }
 
+    /**
+     * A group of *members*.
+     *
+     * This class has no useful logic;
+     * it's just a documentation example.
+     *
+     * @param
+     * @property name the name of this group.
+     * @constructor Creates an empty group.
+     */
     private fun addCars() {
         cars.add(ToyotaFortuner("BLACK"))
         cars.add(ToyotaFortuner("RED"))
@@ -58,4 +68,9 @@ class VehicleRentalStore(ownerName: String, phoneNumber: String) {
             println(java.lang.String.format("%15s %10s %10s", vehicle.manufacturer, vehicle.modelNo, vehicle.color))
         }
     }
+
+    fun startEngine(i: IEngine) {
+
+    }
+
 }

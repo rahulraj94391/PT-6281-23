@@ -1,15 +1,22 @@
 package InterfaceExample
 
-class HondaCity(color : String) : FourWheeler() {
+class HondaCity(color: String) : FourWheeler() {
     override var manufacturer: String = "Honda"
     override var modelNo: String = "City"
-    override var color: String = "Black"
-    override var hasAC: Boolean = true
+    override var color: String = "NOT_SET"
+    override var hasAC: Boolean = false
     override var price: Double = 1500000.0
-
 
     init {
         this.color = color
+    }
+
+    override fun CheckAC() {
+        println("$modelNo has AC.")
+    }
+
+    override fun CallFacility() {
+        println("Calling feature is not there in $modelNo")
     }
 
     override fun changeGear() {
@@ -21,7 +28,7 @@ class HondaCity(color : String) : FourWheeler() {
     }
 
     override fun startEngine() {
-        println("Engine started (CVT)")
+        println("CVT Engine started")
     }
 
     override fun stopEngine() {

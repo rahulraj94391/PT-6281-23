@@ -1,13 +1,13 @@
 package InterfaceExample
 
-class AtlasCycle(color: String): TwoWheelerWithoutEngine() {
+class AtlasCycle(col: String) : TwoWheelerWithoutEngine() {
     override var manufacturer: String = "Atlas"
     override var modelNo: String = "BX34RF"
     override var color: String = "NOT_SET"
     override var price: Double = 19000.0
 
     init {
-        this.color = color
+        this.color = col
     }
 
     override fun changeGear() {

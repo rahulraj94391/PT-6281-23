@@ -1,8 +1,8 @@
 package InterfaceExample
 
 fun main() {
-    val sastaBBT = VehicleRentalStore("Tarun Kumar", "9155881111")
-    sastaBBT.showMotorVehicleMenu()
+    val BBT = VehicleRentalStore("Tarun Kumar", "9155881111")
+    BBT.showMotorVehicleMenu()
     println()
-    sastaBBT.showNonMotorVehicleMenu()
+    BBT.showNonMotorVehicleMenu()
 }

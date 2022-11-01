@@ -6,9 +6,16 @@ class ToyotaFortuner(color: String) : FourWheeler() {
     override var color: String = "NOT_SET"
     override var hasAC: Boolean = true
     override var price: Double = 3700000.0
-
     init {
         this.color = color
+    }
+
+    override fun CheckAC() {
+        println("$modelNo has AC.")
+    }
+
+    override fun CallFacility() {
+        println("Calling feature is available in $modelNo")
     }
 
     override fun changeGear() {
