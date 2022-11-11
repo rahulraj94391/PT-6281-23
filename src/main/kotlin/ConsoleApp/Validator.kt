@@ -3,6 +3,7 @@ package ConsoleApp
 import kotlin.properties.Delegates
 
 class Validator {
+    private var changing: String = "NotSet"
     fun getIntegerInput(range: IntRange): Int {
         print("Enter choice: ")
         var n by Delegates.notNull<Int>()

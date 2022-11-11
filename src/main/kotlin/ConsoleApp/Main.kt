@@ -1,5 +1,6 @@
 package ConsoleApp
 
+import java.lang.reflect.Field
 import kotlin.system.exitProcess
 
 fun main() {
@@ -7,8 +8,7 @@ fun main() {
 
     while (true) {
         Printer.mainScreen()
-        val range: IntRange = 1..4
-        when (validator.getIntegerInput(range)) {
+        when (validator.getIntegerInput(1..4)) {
             1 -> Booking.searchTrain()
             2 -> Booking.bookTicket()
             3 -> Booking.viewBookedTickets()
